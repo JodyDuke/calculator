@@ -1,8 +1,12 @@
-.container {
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#container {
   margin: 5% auto;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 100px 20% 20% 20% 20% 20%;
+  grid-template-rows: 30px 80px 20% 20% 20% 20% 20%;
   height: 50vh;
   width: 50vw;
   min-height: 300px;
@@ -11,10 +15,19 @@
   max-width: 500px;
 }
 
+#tracker {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 #input {
   text-align: right;
-  border:none;
-  font-size: 4em;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 10px;
+  font-size: 3.5em;
   text-decoration: none;
 }
 

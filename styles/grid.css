@@ -1,24 +1,33 @@
+#tracker {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
 #input {
   grid-column-start: 1;
   grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .divide {
-  grid-area: 2 / 4;
+  grid-area: 3 / 4;
 }
 
 .multiply {
-	grid-area: 3 / 4;
-}
-
-.add {
 	grid-area: 4 / 4;
 }
 
+.add {
+	grid-area: 5 / 4;
+}
+
 .sum {
-	grid-area: 6 / 4 / 6 / 5;
+	grid-area: 7 / 4 / 7 / 5;
 }
 
 #clr {
-	grid-area: 5 / 1;
+	grid-area: 6 / 1;
 }
