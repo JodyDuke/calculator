@@ -1,0 +1,69 @@
+.container {
+  margin: 5% auto;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 100px 20% 20% 20% 20% 20%;
+  height: 50vh;
+  width: 50vw;
+  min-height: 300px;
+  min-width: 300px;
+  max-height: 500px;
+  max-width: 500px;
+}
+
+#input {
+  text-align: right;
+  border:none;
+  font-size: 4em;
+  text-decoration: none;
+}
+
+/*remove controls from input box*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.button {
+  border: 2px solid black;
+  background-color: lightgrey;
+  box-shadow: 2px 2px 5px #888;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 5%;
+  font-size: 1.3em;
+}
+
+.button:focus, input:focus {
+  outline: 0;
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 5px #888;
+}
+
+.button:active {
+  box-shadow: 0px 0px 5px #888;
+}
+
+.sum {
+  background-color: lightgreen;
+}
+
+.clear-button {
+  color: white;
+  background-color: red;
+  background: linear-gradient(to right, darkred 50%, red 50%);
+  background-size: 210% 100%;
+  background-position: right top;
+  background-repeat: no-repeat;
+
+  transition: background-position 1s ease-out;
+}
+
+.clear-button:active {
+  background-position: left top;
+}
+

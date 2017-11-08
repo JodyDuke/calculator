@@ -1,0 +1,24 @@
+#input {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.divide {
+  grid-area: 2 / 4;
+}
+
+.multiply {
+	grid-area: 3 / 4;
+}
+
+.add {
+	grid-area: 4 / 4;
+}
+
+.sum {
+	grid-area: 6 / 4 / 6 / 5;
+}
+
+#clr {
+	grid-area: 5 / 1;
+}
