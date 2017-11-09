@@ -1,26 +1,23 @@
-function clearButton(){
-let btn = document.getElementById('clr');
+(function clearButton(){
+	let btn = document.getElementById('clr');
+	let event,
+	nameChange;
 
-let event;
+	btn.addEventListener("mousedown", function(){
+	  nameChange = setTimeout(function(){
+	  	btn.innerHTML = 'AC';
+	  }, 180);
 
-let nameChange;
+	  event = setTimeout(function(){
+	  	console.log('cleared')
+	  }, 1200);
+	});
 
-btn.addEventListener("mousedown", function(){
-  nameChange = setTimeout(function(){
-  	btn.innerHTML = 'AC';
-  }, 180);
+	btn.addEventListener("mouseup", function(){
+	  btn.innerHTML = 'CE'
+	  clearTimeout(event)
+	  clearTimeout(nameChange)
+	});
 
-  event = setTimeout(function(){
-  	console.log('cleared')
-  }, 1200);
-});
+})()
 
-btn.addEventListener("mouseup", function(){
-  btn.innerHTML = 'CE'
-  clearTimeout(event)
-  clearTimeout(nameChange)
-});
-
-}
-
-clearButton()

@@ -4,16 +4,18 @@ function looper(a, b){
       b.innerHTML += e;
       b.innerHTML += " ";
   });
-}
+};
 
-function calculator(){
+(function calculator(){
   let memory = [],
   tracker = document.getElementById('tracker'),
   inputEl = document.getElementById('input'),
-  input = "";
+  input = "",
+  btn = document.getElementById('clr'),
+  event,
+  nameChange;
 
   document.getElementById('container').addEventListener('click', function(event){
-    //event.target.value;
       if(event.target.value.match(/[.0123456789]/g)) {
         input += event.target.value;
         inputEl.innerHTML = input;
@@ -22,18 +24,40 @@ function calculator(){
         memory.push(inputEl.innerHTML, event.target.value);
         inputEl.innerHTML = "";
         input = "";
-        looper(memory, tracker);    
+        looper(memory, tracker);
       }
-      else if(event.target.value === "="){
+      else if(event.target.value === "=" && memory.length > 0){
         memory.push(inputEl.innerHTML);
         inputEl.innerHTML = eval(memory.join(''));
-        looper(memory, tracker); 
+        looper(memory, tracker);
       }
-
+      else if(event.target.value === "clear"){
+        memory.pop();
+        inputEl.innerHTML = "";
+        input = "";
+        looper(memory, tracker);
+      }
   });
-}
 
-calculator()
+  btn.addEventListener("mousedown", function(){
+    nameChange = setTimeout(function(){
+      btn.innerHTML = 'AC';
+    }, 180);
+
+    event = setTimeout(function(){
+      memory = [];
+      input = "";
+      inputEl.innerHTML = "";
+      looper(memory, tracker);
+    }, 1100);
+  });
+
+  btn.addEventListener("mouseup", function(){
+    btn.innerHTML = 'CE';
+    clearTimeout(event);
+    clearTimeout(nameChange);
+  });
+})()
 
 
 

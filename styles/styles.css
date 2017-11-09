@@ -6,7 +6,7 @@ body {
   margin: 5% auto;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 30px 80px 20% 20% 20% 20% 20%;
+  grid-template-rows: 30px 80px 10px 20% 20% 20% 20% 20%;
   height: 50vh;
   width: 50vw;
   min-height: 300px;
@@ -29,6 +29,7 @@ body {
   border-radius: 10px;
   font-size: 3.5em;
   text-decoration: none;
+  overflow: scroll;
 }
 
 /*remove controls from input box*/
@@ -72,7 +73,6 @@ input[type=number]::-webkit-outer-spin-button {
   background-size: 210% 100%;
   background-position: right top;
   background-repeat: no-repeat;
-
   transition: background-position 1s ease-out;
 }
 

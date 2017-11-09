@@ -12,22 +12,26 @@
   grid-row-end: 3;
 }
 
+.divider {
+  grid-area: 3 / 1 / 4 / 5;
+}
+
 .divide {
-  grid-area: 3 / 4;
+  grid-area: 4 / 4;
 }
 
 .multiply {
-	grid-area: 4 / 4;
-}
-
-.add {
 	grid-area: 5 / 4;
 }
 
+.add {
+	grid-area: 6 / 4;
+}
+
 .sum {
-	grid-area: 7 / 4 / 7 / 5;
+	grid-area: 8 / 4 / 8 / 5;
 }
 
 #clr {
-	grid-area: 6 / 1;
+	grid-area: 7 / 1;
 }
