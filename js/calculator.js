@@ -1,8 +1,16 @@
 function looper(a, b){
   b.innerHTML = "";
   a.forEach(function(e){
-      b.innerHTML += e;
-      b.innerHTML += " ";
+    switch(e){
+      case '/':
+        b.innerHTML += '&#247; ';
+        break;
+      case '*':
+        b.innerHTML += '&#215; ';
+        break;
+      default:
+        b.innerHTML += e + " ";
+    }
   });
 };
 
@@ -20,7 +28,7 @@ function looper(a, b){
         input += event.target.value;
         inputEl.innerHTML = input;
       }
-      else if(event.target.value.match(/[*/+-]/g)) {
+      else if(event.target.value.match(/[*/+-]/g) && (inputEl.innerHTML).length > 0) {
         memory.push(inputEl.innerHTML, event.target.value);
         inputEl.innerHTML = "";
         input = "";
@@ -30,6 +38,8 @@ function looper(a, b){
         memory.push(inputEl.innerHTML);
         inputEl.innerHTML = eval(memory.join(''));
         looper(memory, tracker);
+        input = "";
+        memory = [];
       }
       else if(event.target.value === "clear"){
         memory.pop();
@@ -49,7 +59,7 @@ function looper(a, b){
       input = "";
       inputEl.innerHTML = "";
       looper(memory, tracker);
-    }, 1100);
+    }, 1000);
   });
 
   btn.addEventListener("mouseup", function(){
