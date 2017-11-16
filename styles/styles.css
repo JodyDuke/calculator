@@ -29,7 +29,13 @@ body {
   border-radius: 10px;
   font-size: 3.5em;
   text-decoration: none;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space:nowrap
+}
+
+#input::-webkit-scrollbar { 
+    display: none; 
 }
 
 .button {
